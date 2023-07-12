@@ -1,9 +1,52 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Should be changed on hosting the website */}
+        <meta property="og:url" content="https://linkshub.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="LinksHub: A hub of ready-to-use tech resources"
+        />
+        <meta
+          property="og:description"
+          content="LinksHub aims to provide developers with access to a wide range of free resources and tools that they can use in their work."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dhnkuonev/image/upload/v1683805184/linkshub_gcahgs.png"
+        />
+        <meta property="og:site_name" content="LinksHub" />
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://linkshub.vercel.app/" />
+        <meta
+          property="twitter:title"
+          content="LinksHub: A hub of ready-to-use tech resources"
+        />
+        <meta
+          property="twitter:description"
+          content="LinksHub aims to provide developers with access to a wide range of free resources and tools that they can use in their work."
+        />
+        <meta
+          property="twitter:image"
+          content="https://res.cloudinary.com/dhnkuonev/image/upload/v1683805184/linkshub_gcahgs.png"
+        />
+        <meta name="language" content="English" />
+        <meta name="linkedin:profile" content="" />
+        <meta property="instagram:username" content="" />
+        <meta
+          name="twitter:site"
+          content="https://twitter.com/linkshubdotdev"
+        />
+        <meta property="discord:server" content="1064977356198006805" />
+        <meta
+          property="discord:invite"
+          content="https://discord.com/invite/NvK67YnJX5"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,7 +63,7 @@ export default function Document() {
             src="https://www.googletagmanager.com/ns.html?id=GTM-PC5DFJG"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
         <div id="overlay-root"></div>
@@ -29,5 +72,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }

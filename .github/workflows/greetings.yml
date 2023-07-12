@@ -1,19 +1,21 @@
 name: Greetings
 
 on:
+  fork:
+  push:
+    branches: [main]
   issues:
     types: [opened]
-  pull_request:
+  pull_request_target:
     types: [opened]
 
 jobs:
-  greeting:
+  welcome:
     runs-on: ubuntu-latest
     steps:
-      - name: Show Greetings Message
-        run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "Great job, ${{ github.actor }}! 🎉 Thank you for submitting your pull request in LinksHub. Your contribution is valuable and we appreciate your efforts to improve our project. We'll review your changes and provide feedback as soon as possible. Keep up the great work!"
-          elif [ "${{ github.event_name }}" = "issues" ]; then
-            echo "Hello, ${{ github.actor }}! 🎉 Thank you for creating a new issue in LinksHub. Your contribution is highly appreciated, and we are eager to collaborate with you to resolve the issue. Your hard work and dedication are commendable. Keep up the excellent work!"
-          fi
+      - uses: actions/checkout@v3
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "Hello ${{ github.actor }}! \n Thank you for raising this issue! 😊 Your contribution is valuable to us! 😊 \n\nPlease make sure to follow our [Contributing Guidelines. 💪🏻](https://github.com/rupali-codes/LinksHub/blob/main/CONTRIBUTING.md) \n\nOur review team will carefully assess the issue and reach out to you soon! 😇 \n We appreciate your patience! "
+          pr-message: "Thank you, ${{ github.actor }}, for creating this pull request and contributing to LinksHub! 💗\n\n The maintainers will review this Pull Request and provide feedback as soon as possible! 😇\nWe appreciate your patience and contribution, Keep up the great work! 😀"
